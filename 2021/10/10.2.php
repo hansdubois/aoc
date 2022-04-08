@@ -48,31 +48,6 @@ class Line {
         return $this->line;
     }
 
-    public function isCorrupted(): bool
-    {
-        $openingCharsInLine = [];
-        $chars = str_split($this->line);
-
-        foreach ($chars as $char) {
-            if ($this->isOpenChar($char)) {
-                $openingCharsInLine[] = $char;
-
-                continue;
-            }
-
-            if ($this->isClosingChar($char))
-            {
-                $openingChar = array_pop($openingCharsInLine);
-
-                if ($char !== $this->charPairs[$openingChar]) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
     public function getLineCompletion(): string
     {
         $openingCharsInLine = [];
