@@ -18,3 +18,7 @@
 /Users/hans.dubois/Development/aoc/2016/AOC2016/day02/bin/Debug/net6.0/obj/Debug/net6.0/day02.csproj.FileListAbsolute.txt
 /Users/hans.dubois/Development/aoc/2016/AOC2016/day02/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/input/sample.txt
 /Users/hans.dubois/Development/aoc/2016/AOC2016/day02/bin/Debug/net6.0/bin/Debug/net6.0/obj/Debug/net6.0/day02.csproj.FileListAbsolute.txt
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day02/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/input/sample.txt
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day02/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/obj/Debug/net6.0/day02.csproj.FileListAbsolute.txt
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day02/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/input/sample.txt
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day02/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/bin/Debug/net6.0/obj/Debug/net6.0/day02.csproj.FileListAbsolute.txt
