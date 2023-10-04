@@ -13,7 +13,4 @@
         </Content>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="bin" />
-    </ItemGroup>
 </Project>
