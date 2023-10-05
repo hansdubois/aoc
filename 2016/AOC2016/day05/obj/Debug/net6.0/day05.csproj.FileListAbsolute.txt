@@ -1,0 +1,15 @@
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/bin/Debug/net6.0/day05
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/bin/Debug/net6.0/day05.deps.json
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/bin/Debug/net6.0/day05.runtimeconfig.json
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/bin/Debug/net6.0/day05.dll
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/bin/Debug/net6.0/day05.pdb
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.csproj.AssemblyReference.cache
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.AssemblyInfoInputs.cache
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.AssemblyInfo.cs
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.csproj.CoreCompileInputs.cache
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.dll
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/refint/day05.dll
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.pdb
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/day05.genruntimeconfig.cache
+/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/Debug/net6.0/ref/day05.dll

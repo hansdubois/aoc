@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/day05.csproj": {}
+  },
+  "projects": {
+    "/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/day05.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/day05.csproj",
+        "projectName": "day05",
+        "projectPath": "/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/day05.csproj",
+        "packagesPath": "/Users/hans.dubois/.nuget/packages/",
+        "outputPath": "/Users/hans.dubois/Development/aoc/2016/AOC2016/day05/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/Users/hans.dubois/Library/Application Support/Godot/mono/GodotNuGetFallbackFolder",
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/hans.dubois/.nuget/NuGet/NuGet.Config",
+          "/Users/hans.dubois/.nuget/NuGet/config/Godot.Offline.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://coolblue.myget.org/F/coolblue/auth/80d38443-e68e-4346-b841-16ec8be49b86/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
