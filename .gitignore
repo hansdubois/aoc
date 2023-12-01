@@ -1,0 +1,6 @@
+**/bin
+*/*/bin
+.idea
+bin/
+**/input.txt
+**obj
