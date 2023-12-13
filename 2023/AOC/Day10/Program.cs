@@ -1,4 +1,7 @@
-﻿var mode = "sample";
+﻿using System.Drawing;
+using System.Numerics;
+
+var mode = "sample";
 var gridInput = File.ReadAllLines("input/" + mode + ".txt");
 
 var nodeTypes = new Dictionary<string, NodeType>()
@@ -16,6 +19,8 @@ var nodeTypes = new Dictionary<string, NodeType>()
 var graph = new Graph();
 Node startingNode = null;
 
+var allPoints = new List<PointF>();
+
 for(var y = 0; y < gridInput.Length; y++) {
     for (var x = 0; x < gridInput[y].Length; x++)
     {
@@ -27,20 +32,44 @@ for(var y = 0; y < gridInput.Length; y++) {
             startingNode = node;
         }
         
+        allPoints.Add(new PointF(new Vector2(x, y)));
         graph.AddNode(node);
     }
 }
-
-printGraph(graph);
 
 var visited = new List<string>();
 var paths = new List<string>();
 
 findFurthestNode(startingNode, visited);
 
+var polygon = new List<PointF>();
+
+foreach (var point in visited)
+{
+    var pointParts = point.Split("-").Select(float.Parse).ToList();
+    
+    polygon.Add(new PointF(new Vector2(pointParts[1], pointParts[0])));
+}
+
+
+var counter = 0;
+var PointsInPolyGon = new List<string>();
+foreach (var point in allPoints)
+{
+    if (IsPointInPolygon4(polygon, point) && !visited.Contains(point.Y + "-" + point.X))
+    {
+        PointsInPolyGon.Add(point.Y + "-" + point.X);
+        counter++;
+    }
+}
+
+Console.WriteLine("Counter" + counter);
+
 var longest = paths.OrderBy(x => x.Length).Last();
 
 Console.WriteLine(longest.Count( x => x.Equals('/')));
+
+printGraph(graph);
 
 void findFurthestNode(Node node, List<string> visited)
 {
@@ -65,19 +94,81 @@ void findFurthestNode(Node node, List<string> visited)
     }
 }
 
+/// <summary>
+/// Determines if the given point is inside the polygon
+/// </summary>
+/// <param name="polygon">the vertices of polygon</param>
+/// <param name="testPoint">the given point</param>
+/// <returns>true if the point is inside the polygon; otherwise, false</returns>
+static bool IsPointInPolygon4(List<PointF> poly, PointF p)
+{
+    PointF p1, p2;
+    bool inside = false;
+
+    if (poly.Count < 3)
+    {
+        return inside;
+    }
+
+    var oldPoint = new PointF(
+        poly[poly.Count - 1].X, poly[poly.Count - 1].Y);
+
+    for (int i = 0; i < poly.Count; i++)
+    {
+        var newPoint = new PointF(poly[i].X, poly[i].Y);
+
+        if (newPoint.X > oldPoint.X)
+        {
+            p1 = oldPoint;
+            p2 = newPoint;
+        }
+        else
+        {
+            p1 = newPoint;
+            p2 = oldPoint;
+        }
+
+        if ((newPoint.X < p.X) == (p.X <= oldPoint.X)
+            && (p.Y - (long) p1.Y)*(p2.X - p1.X)
+            < (p2.Y - (long) p1.Y)*(p.X - p1.X))
+        {
+            inside = !inside;
+        }
+
+        oldPoint = newPoint;
+    }
+
+    return inside;
+}
+
 void printGraph(Graph graph)
 {
     for(var y = 0; y < graph.GetHeight(); y++) {
         for (var x = 0; x < graph.GetWidth(); x++)
         {
             var node = graph.GetNode(x, y);
-            
-            Console.Write(nodeTypes.Where(x => x.Value == node.NodeType).Select(x => x.Key).First());
+
+            if (PointsInPolyGon.Contains(y + "-" + x))
+            {
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("X");
+                Console.ResetColor();
+                
+            } else if (visited.Contains(y + "-" + x))
+            {
+                Console.Write("X");   
+            }
+            else
+            {
+                Console.Write(nodeTypes.Where(x => x.Value == node.NodeType).Select(x => x.Key).First());
+            }
         }
         
         Console.WriteLine();
     }
 }
+
 
 enum NodeType
 {
@@ -239,5 +330,4 @@ internal class PathedNode
         this.path = path;
         this.node = node;
     }
-    
 }
