@@ -23,11 +23,3 @@ $diff = array_diff($programs, $linkedPrograms);
 $start = array_pop($diff);
 
 echo "Part 1: " . $start . PHP_EOL;
-
-class program {
-    public function __construct(
-       public readonly string $name,
-       public readonly int $weight,
-
-    ) {}
-}
