@@ -1,10 +1,14 @@
 <?php
+require __DIR__ . '/../common/Stopwatch.php';
+
+$stopwatch = new Stopwatch();
 
 $lines = explode("\n", file_get_contents(__DIR__ . '/input.txt'));
 
 $safeCount = 0;
 $partTwoSafeCount = 0;
 
+$stopwatch->start();
 foreach ($lines as $line) {
     if (isNumberSafePartOne($line)) {
         $safeCount++;
@@ -14,6 +18,8 @@ foreach ($lines as $line) {
         $partTwoSafeCount++;
     }
 }
+
+$time = $stopwatch->ellapsedMS();
 
 function isNumberSafePartOne(string $number): bool {
     $numbers = array_map('intval', explode(" ", $number));
@@ -78,3 +84,5 @@ function isNumberSafePartTwo(string $number): bool {
 echo PHP_EOL;
 echo "Part 1: " . $safeCount . PHP_EOL;
 echo "Part 2: " . $partTwoSafeCount . PHP_EOL;
+
+echo $time . PHP_EOL;
