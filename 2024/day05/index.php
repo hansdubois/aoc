@@ -21,6 +21,13 @@ $stopwatch->start();
 $partOne = 0;
 $partTwo = 0;
 
+/**
+ * Build a list <Page, NeedsToBeBefore[]>
+ *
+ * Sort the update based on the list
+ * Compare to the original, if same Part 1, if not Part 2.
+ */
+
 foreach ($updates as $update) {
     $parts = explode(',', $update);
     $sort = sortLine($parts, $order);
