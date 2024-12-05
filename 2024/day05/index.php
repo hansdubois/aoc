@@ -36,23 +36,13 @@ foreach ($updates as $update) {
 
 echo "Part 1: " . $partOne . PHP_EOL;
 echo "Part 2: " . $partTwo . PHP_EOL;
+
 echo $stopwatch->ellapsed() . PHP_EOL;
 
 function sortLine(array $line, array $order): array
 {
     usort($line, function ($a, $b) use ($order) {
-        $needsToBefore = $order[$a];
-        $bNeedsToBefore = $order[$b];
-
-        if (in_array($b, $needsToBefore)) {
-            return -1;
-        }
-
-        if (in_array($a, $bNeedsToBefore)) {
-            return 1;
-        }
-
-        return 0;
+        return in_array($a, $order[$b]) <=> in_array($b,  $order[$a]);
     });
 
     return $line;
