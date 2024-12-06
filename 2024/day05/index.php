@@ -1,18 +1,13 @@
 <?php
-ini_set("memory_limit","-1");
-
-
 $lines = explode("\n", file_get_contents(__DIR__ . '/input.txt'));
 $updates = explode("\n", file_get_contents(__DIR__ . '/input_updates.txt'));
-
-$order = [];
 
 require __DIR__ . '/../common/Stopwatch.php';
 
 foreach ($lines as $line) {
-    $parts = explode('|', $line);
+    [$main, $dependency] = explode('|', $line);
 
-    $order[$parts[0]][] = $parts[1];
+    $order[$main][] = $dependency;
 }
 
 $stopwatch = new Stopwatch();
