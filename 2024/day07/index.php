@@ -50,8 +50,10 @@ function tryAllOptions(
         return true;
     }
 
-    if ($partTwo && tryAllOptions($operators, $testValue, (int) ( $prev . $number ), true)) {
-        return true;
+    if ($partTwo) {
+        if (tryAllOptions($operators, $testValue, (int) ( $prev . $number ), true)) {
+            return true;
+        }
     }
 
     return false;
