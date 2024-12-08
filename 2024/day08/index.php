@@ -26,7 +26,6 @@ $frequencies = array_keys($antennas);
 $antiNodes = [];
 $antiNodesPartTwo = [];
 
-
 // Part One
 foreach ($frequencies as $frequency) {
     /**
@@ -34,6 +33,7 @@ foreach ($frequencies as $frequency) {
      */
     $antennasWithFrequency = $antennas[$frequency];
 
+    // Part one
     for ($source = 0; $source < count($antennasWithFrequency); $source++) {
         for ($target = $source + 1; $target < count($antennasWithFrequency); $target++) {
             $sourceAntenna = $antennasWithFrequency[$source];
@@ -53,7 +53,48 @@ foreach ($frequencies as $frequency) {
             }
         }
     }
+
+    // Part 2
+    foreach ( $antennasWithFrequency as $antenna ) {
+        // all antennas are antinodes.
+        $antiNodesPartTwo[] = $antenna;
+    }
+
+    // Part one
+    for ($source = 0; $source < count($antennasWithFrequency); $source++) {
+        for ($target = $source + 1; $target < count($antennasWithFrequency); $target++) {
+            $sourceAntenna = $antennasWithFrequency[$source];
+            $targetAntenna = $antennasWithFrequency[$target];
+
+            $direction = $targetAntenna->direction($sourceAntenna);
+
+            // Find all forward
+            $point = $sourceAntenna;
+            while ( true ) {
+                $point = $point->add($direction);
+
+                if (!$grid->existsOnGrid($point)) {
+                    break;
+                }
+
+                $antiNodesPartTwo[] = $point;
+            }
+
+            // Find all backward
+            $point = $sourceAntenna;
+            while ( true ) {
+                $point = $point->subtract($direction);
+                
+                if (!$grid->existsOnGrid($point)) {
+                    break;
+                }
+
+                $antiNodesPartTwo[] = $point;
+            }
+        }
+    }
 }
 
 
 echo "Part 1:" . count(array_unique($antiNodes)) . PHP_EOL;
+echo "Part 2:" . count(array_unique($antiNodesPartTwo)) . PHP_EOL;
