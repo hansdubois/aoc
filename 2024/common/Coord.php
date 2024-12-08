@@ -11,6 +11,16 @@ class Coord
         return new Coord($this->x + $coord->x, $this->y + $coord->y);
     }
 
+    public function subtract(Coord $coord): Coord
+    {
+        return new Coord($this->x - $coord->x, $this->y - $coord->y);
+    }
+
+    public function direction(Coord $coord): Coord
+    {
+        return new Coord($this->x - $coord->x, $this->y - $coord->y);
+    }
+
     public function __toString(): string
     {
         return $this->x . "-" . $this->y;
