@@ -21,6 +21,11 @@ for($y = 0; $y < count($input); $y++) {
     }
 }
 
+require __DIR__ . '/../common/Stopwatch.php';
+
+$stopwatch = new Stopwatch();
+$stopwatch->start();
+
 $frequencies = array_keys($antennas);
 
 $antiNodes = [];
@@ -84,7 +89,7 @@ foreach ($frequencies as $frequency) {
             $point = $sourceAntenna;
             while ( true ) {
                 $point = $point->subtract($direction);
-                
+
                 if (!$grid->existsOnGrid($point)) {
                     break;
                 }
