@@ -6,6 +6,10 @@ require __DIR__ . '/../common/Grid.php';
 
 require __DIR__ . '/../common/Stopwatch.php';
 
+
+$stopwatch = new Stopwatch();
+$stopwatch->start();
+
 $input = explode("\n", file_get_contents(__DIR__ . '/input.txt'));
 $grid = new Grid();
 
@@ -130,3 +134,5 @@ for($y = 0; $y < count($input); $y++) {
 
 echo "Part 1: ". $part1 . PHP_EOL;
 echo "Part 2: ". $part2 . PHP_EOL;
+
+echo $stopwatch->ellapsed() . PHP_EOL;

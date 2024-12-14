@@ -69,4 +69,8 @@ class Grid {
             array_key_exists($coord->x, $this->data[$coord->y])
         );
     }
+
+    public function getItemsOnGrid(): array {
+        return $this->data;
+    }
 }
