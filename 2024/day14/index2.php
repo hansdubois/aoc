@@ -68,7 +68,7 @@ foreach ($input as $line) {
     $grid->add(new Coord($positionX, $positionY), ['x' => $velocityX, 'y' => $velocityY]);
 }
 
-for($step = 0; $step < 1000; $step++) {
+for($step = 0; $step < 8051; $step++) {
     $points = $grid->getItemsOnGrid();
 
     $grid = new treeGrid($width, $height);
@@ -104,7 +104,11 @@ for($step = 0; $step < 1000; $step++) {
     $return .= "========================================" . PHP_EOL;
     $return .= $grid->return();
 
-    file_put_contents(__DIR__ . '/output.txt', $return, FILE_APPEND);
+    echo $grid->return();
+
+    //file_put_contents(__DIR__ . '/output.txt', $return, FILE_APPEND);
 }
+
+echo $grid->return();
 
 echo "Part one: ". array_product($quadrantCount) . "\n";

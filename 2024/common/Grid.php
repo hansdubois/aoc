@@ -73,4 +73,18 @@ class Grid {
     public function getItemsOnGrid(): array {
         return $this->data;
     }
+
+    public function getAllItemsThatHaveValue($value): array {
+        $return = [];
+
+        foreach ($this->data as $y => $row) {
+            foreach ($row as $x => $gridValue) {
+                if ($gridValue == $value) {
+                    $return[] = new Coord($x, $y);
+                }
+            }
+        }
+
+        return $return;
+    }
 }
