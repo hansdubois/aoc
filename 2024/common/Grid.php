@@ -43,6 +43,36 @@ class Grid {
             echo "\n";
         }
     }
+    public function printWithPath(array $path) : void {
+        $colorNumber = 16;
+
+        foreach ($path as $part) {
+            $this->add($part, "*");
+        }
+
+
+        foreach ($this->data as $y => $row) {
+            foreach ($row as $x => $value) {
+                if ($value == "*") {
+                    print "\e[48;5;". $colorNumber. "m";
+                    echo "*";
+                    print "\e[0m";
+
+                    if($colorNumber >=256) {
+                        $colorNumber = 16;
+                    }
+
+                } else {
+                    echo $value;
+                }
+                //echo (string)$this->data[$y][$x];
+            }
+
+            $colorNumber++;
+
+            echo "\n";
+        }
+    }
 
     public function returnAllSurroundingValues(Coord $coord): array {
         $coords = [
