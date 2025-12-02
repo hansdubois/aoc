@@ -10,6 +10,7 @@ fn main() {
 
     match day.as_str() {
         "1" | "01" => days::day01::run(),
+        "2" | "02" => days::day02::run(),
         _ => eprintln!("Unknown day: {day}")
     }
 }
