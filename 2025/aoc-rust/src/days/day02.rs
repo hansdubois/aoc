@@ -7,14 +7,19 @@ pub fn run() {
 fn solve() {
     let contents = include_str!("input/day02.txt");
     let mut count = 0;
-    let mut countTwo = 0;
+    let mut count_two = 0;
 
-    let ranges: Vec<(u64, u64)> = contents.split(',').map(|row| {
-        let mut split = row.split('-');
+    let ranges: Vec<(u64, u64)> = contents
+        .split(',')
+        .map(|row| {
+            let mut split = row.split('-');
 
-        (split.next().unwrap().parse().unwrap(),
-         split.next().unwrap().parse().unwrap())
-    }).collect();
+            (
+                split.next().unwrap().parse().unwrap(),
+                split.next().unwrap().parse().unwrap(),
+            )
+        })
+        .collect();
 
     for range in ranges {
         for number in range.0..=range.1 {
@@ -23,13 +28,13 @@ fn solve() {
             }
 
             if is_invalid_two(number) {
-                countTwo += number;
+                count_two += number;
             }
         }
     }
 
     println!("Part 1: {}", count);
-    println!("Part 2: {}", countTwo);
+    println!("Part 2: {}", count_two);
 }
 
 fn is_invalid(number: u64) -> bool {
@@ -37,12 +42,12 @@ fn is_invalid(number: u64) -> bool {
     let len = string.len();
 
     // must have even length
-    if len % 2 != 0 {
+    if len.is_multiple_of(2) {
         return false;
     }
 
     let mid_position = len / 2;
-    &string[..mid_position] == &string[mid_position..]
+    string[..mid_position] == string[mid_position..]
 }
 
 fn is_invalid_two(number: u64) -> bool {
@@ -52,7 +57,7 @@ fn is_invalid_two(number: u64) -> bool {
     // We only are interested in lengths that can be split
     for part_length in 1..=length / 2 {
         // There should not be a remainder
-        if length % part_length != 0 {
+        if !length.is_multiple_of(part_length) {
             continue;
         }
 
