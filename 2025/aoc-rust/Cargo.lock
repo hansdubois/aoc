@@ -7,6 +7,7 @@ name = "aoc-rust"
 version = "0.1.0"
 dependencies = [
  "read-stdin",
+ "value",
 ]
 
 [[package]]
@@ -14,3 +15,9 @@ name = "read-stdin"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5ad612fd0f19a9d97ef34e4aaf208e035adce357667b2584ab24a0a90b1272a0"
+
+[[package]]
+name = "value"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d49e599e0729ab599fafc149a89bcc2914d8658fb8edbf3245b957597f9761e4"
