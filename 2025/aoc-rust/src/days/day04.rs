@@ -21,7 +21,7 @@ fn solve() {
     let mut counter = 0;
     let mut total_removed = 0;
 
-    loop {git
+    loop {
         counter += 1;
         let remove_count = remove_rolls(&mut grid);
         total_removed += remove_count;
