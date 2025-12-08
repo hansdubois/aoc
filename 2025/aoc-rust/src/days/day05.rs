@@ -1,7 +1,7 @@
 use core::include_str;
 
 pub fn run() {
-    println!("Running Day 03");
+    println!("Running Day 05");
     solve();
 }
 

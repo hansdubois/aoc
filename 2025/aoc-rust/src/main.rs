@@ -1,6 +1,6 @@
 extern crate core;
 
-use std::env;
+use std::{env};
 use std::time::Instant;
 
 mod days;
@@ -16,6 +16,8 @@ fn main() {
         "3" | "03" => days::day03::run(),
         "4" | "04" => days::day04::run(),
         "5" | "05" => days::day05::run(),
+        "6" | "06" => days::day06::run(),
+        "7" | "07" => days::day07::run(),
         _ => eprintln!("Unknown day: {day}"),
     }
 
